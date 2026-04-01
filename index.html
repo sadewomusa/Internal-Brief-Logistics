@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GT Logistics Ecosystem — Strategy Session</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--n:#002856;--o:#E87722;--bg:#f4f6f9;--g:#8a9ab5;--ok:#00875a;--pl:#0052cc;--gap:#c9372c;--disc:#974f0c;--w:#fff;--sb:340px}
+html{scroll-behavior:smooth;scroll-padding-top:118px}
+body{font-family:'Barlow',sans-serif;background:var(--bg);color:#1a2a3a;line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+.bc{font-family:'Barlow Condensed',sans-serif}
+
+/* HEADER */
+.hd{position:sticky;top:0;z-index:100;background:var(--n);height:62px;display:flex;align-items:center;padding:0 28px;gap:14px;box-shadow:0 2px 12px rgba(0,40,86,.35)}
+.hex{width:36px;height:36px;flex-shrink:0}
+.hex svg{width:100%;height:100%}
+.hd-brand{color:var(--w);font-weight:600;font-size:14px;opacity:.85}
+.hd-title{color:var(--w);font-weight:700;font-size:17px;margin-left:6px;padding-left:14px;border-left:1px solid rgba(255,255,255,.2)}
+.hd-badge{background:var(--o);color:var(--w);font-weight:700;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:3px;margin-left:10px}
+.hd-date{margin-left:auto;color:rgba(255,255,255,.55);font-size:13px;font-weight:500}
+
+/* NAV */
+.nv{position:sticky;top:62px;z-index:99;background:var(--w);height:46px;display:flex;align-items:center;padding:0 28px;gap:2px;border-bottom:1px solid #dde3ed;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow-x:auto}
+.nv a{font-weight:600;font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--g);text-decoration:none;padding:5px 12px;border-radius:4px;white-space:nowrap;transition:.2s}
+.nv a:hover,.nv a.ac{color:var(--n);background:rgba(0,40,86,.07)}
+
+/* LAYOUT */
+.wrap{display:flex;max-width:1400px;margin:0 auto;padding:0 20px;gap:24px}
+.mn{flex:1;min-width:0;padding-bottom:60px}
+.sb{width:var(--sb);flex-shrink:0;padding-top:20px;padding-bottom:60px}
+@media(max-width:1100px){.wrap{flex-direction:column}.sb{width:100%}}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--n) 0%,#001a3a 60%,#00102a 100%);padding:48px 36px 40px;color:var(--w);position:relative;overflow:hidden;margin-bottom:28px;border-radius:0 0 10px 10px}
+.hero::before{content:'';position:absolute;top:-40%;right:-10%;width:450px;height:450px;background:radial-gradient(circle,rgba(232,119,34,.12) 0%,transparent 70%);pointer-events:none}
+.hero-l{font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin-bottom:10px}
+.hero h1{font-weight:800;font-size:38px;letter-spacing:-.5px;line-height:1.15;margin-bottom:14px}
+.hero-s{font-size:15px;line-height:1.65;color:rgba(255,255,255,.72);max-width:700px;margin-bottom:20px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;position:relative;z-index:1}
+.tag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.82);font-weight:600;font-size:12px;padding:5px 12px;border-radius:18px;white-space:nowrap}
+
+/* SECTION */
+.sec{margin-bottom:36px}
+.sec-l{font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin-bottom:5px}
+.sec-t{font-weight:800;font-size:28px;color:var(--n);margin-bottom:16px;letter-spacing:-.3px}
+.sec-i{color:#4a5568;margin-bottom:20px;max-width:700px;line-height:1.7}
+
+/* NAVY BOX */
+.nb{background:var(--n);color:var(--w);padding:24px 28px;border-radius:9px;margin-bottom:24px}
+.nb h3{font-weight:700;font-size:19px;margin-bottom:8px}
+.nb p{color:rgba(255,255,255,.78);line-height:1.7;font-size:14px}
+
+/* CORRIDOR */
+.cor{position:relative;padding-left:34px}
+.cor::before{content:'';position:absolute;left:12px;top:22px;bottom:22px;width:2px;background:linear-gradient(to bottom,var(--ok),var(--pl),var(--ok))}
+.cn{position:relative;background:var(--w);border:1px solid #dde3ed;border-radius:9px;padding:18px 22px;margin-bottom:14px;transition:box-shadow .2s}
+.cn:hover{box-shadow:0 3px 14px rgba(0,40,86,.07)}
+.nd{position:absolute;left:-28px;top:22px;width:12px;height:12px;border-radius:50%;border:3px solid var(--w);box-shadow:0 0 0 2px currentColor}
+.nd.c{color:var(--ok);background:var(--ok)}
+.nd.p{color:var(--pl);background:var(--pl)}
+.ns{font-weight:700;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:3px}
+.ns.c{color:var(--ok)}.ns.p{color:var(--pl)}
+.nn{font-weight:700;font-size:17px;color:var(--n);margin-bottom:5px}
+.ndesc{color:#4a5568;font-size:13px;margin-bottom:10px;line-height:1.55}
+.bds{display:flex;flex-wrap:wrap;gap:5px}
+.bd{font-weight:600;font-size:10px;letter-spacing:.3px;padding:3px 9px;border-radius:3px;white-space:nowrap}
+.bd.gr{background:#e3fcef;color:#006644}
+.bd.bl{background:#deebff;color:#0747a6}
+
+/* CARDS */
+.cd{background:var(--w);border:1px solid #dde3ed;border-radius:9px;margin-bottom:14px;overflow:hidden}
+.ch{padding:16px 20px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none}
+.ch:hover{background:rgba(0,40,86,.015)}
+.ci{font-size:19px;flex-shrink:0}
+.ct{flex:1;min-width:0}
+.ct-t{font-weight:700;font-size:16px;color:var(--n)}
+.ct-s{font-size:11px;color:var(--g);margin-top:1px}
+.sp{font-weight:700;font-size:10px;letter-spacing:.8px;text-transform:uppercase;padding:3px 9px;border-radius:3px;white-space:nowrap}
+.sp.r{background:#ffecea;color:var(--gap)}.sp.b{background:#deebff;color:var(--pl)}.sp.a{background:#fff3e0;color:var(--disc)}.sp.g{background:#e3fcef;color:var(--ok)}
+.ca{font-size:13px;color:var(--g);transition:transform .3s;flex-shrink:0}
+.cd.op .ca{transform:rotate(180deg)}
+.cb{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.cd.op .cb{max-height:12000px}
+.cc{padding:0 20px 20px}
+
+/* ORANGE BOX */
+.ob{background:#fff8f0;border-left:4px solid var(--o);padding:14px 18px;border-radius:0 7px 7px 0;margin-bottom:18px;color:#5a3e1a;font-size:13px;line-height:1.7}
+
+/* TABLES */
+.dt{width:100%;border-collapse:collapse;margin-bottom:18px;font-size:12px}
+.dt th{background:var(--n);color:var(--w);font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;padding:9px 12px;text-align:left}
+.dt td{padding:9px 12px;border-bottom:1px solid #edf0f5;vertical-align:top}
+.dt tr:hover td{background:#f8f9fc}
+.pt{font-weight:700;font-size:9px;letter-spacing:.7px;text-transform:uppercase;padding:2px 7px;border-radius:3px;white-space:nowrap;display:inline-block}
+.pt.r{background:#ffecea;color:var(--gap)}.pt.b{background:#deebff;color:var(--pl)}.pt.a{background:#fff3e0;color:var(--disc)}
+
+/* CHECKLIST */
+.cl{list-style:none;margin-bottom:18px}
+.cl li{display:flex;align-items:flex-start;gap:9px;padding:7px 10px;border-radius:5px;cursor:pointer;transition:background .12s;font-size:13px;line-height:1.5}
+.cl li:hover{background:#f0f2f7}
+.ck{width:18px;height:18px;border:2px solid var(--g);border-radius:3px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:.12s}
+.cl li.x .ck{background:var(--n);border-color:var(--n)}
+.ck svg{opacity:0;transition:opacity .12s;width:11px;height:11px}
+.cl li.x .ck svg{opacity:1}
+
+/* DISC Q */
+.dq{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13px;line-height:1.6}
+.dn{width:24px;height:24px;background:var(--n);color:var(--w);font-weight:700;font-size:12px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.dqs-h{font-weight:700;font-size:13px;color:var(--n);margin:16px 0 8px;letter-spacing:.3px;text-transform:uppercase}
+
+/* MINI GRID */
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+@media(max-width:700px){.mg{grid-template-columns:1fr}}
+.mc{background:#f8f9fc;border:1px solid #e2e6ef;border-radius:7px;padding:14px}
+.mc h4{font-weight:700;font-size:13px;color:var(--n);margin-bottom:4px}
+.mc p{font-size:12px;color:#4a5568;line-height:1.5}
+
+/* TRI GRID */
+.tg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:18px}
+@media(max-width:800px){.tg{grid-template-columns:1fr}}
+.tc{background:var(--w);border:1px solid #e2e6ef;border-radius:7px;padding:14px;border-top:3px solid var(--g)}
+.tc.ot{border-top-color:var(--o)}.tc.bt{border-top-color:var(--pl)}
+.tc h4{font-weight:700;font-size:14px;color:var(--n);margin-bottom:4px}
+.tc p{font-size:12px;color:#4a5568;line-height:1.5}
+
+/* FLOW */
+.fr{display:flex;align-items:center;gap:0;margin-bottom:10px;flex-wrap:wrap}
+.fb{background:var(--n);color:var(--w);font-weight:600;font-size:11px;padding:6px 12px;border-radius:5px;white-space:nowrap}
+.fa{color:var(--o);font-size:16px;font-weight:700;padding:0 3px}
+.fc{font-size:12px;color:#4a5568;line-height:1.5;margin-bottom:20px}
+.jl{font-weight:700;font-size:14px;color:var(--n);margin:18px 0 6px}
+
+/* UNIT GRID */
+.ug{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+@media(max-width:700px){.ug{grid-template-columns:1fr}}
+
+/* ROADMAP */
+.rg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:800px){.rg{grid-template-columns:1fr}}
+.rp{background:var(--w);border:1px solid #dde3ed;border-radius:9px;overflow:hidden}
+.rh{padding:14px 18px;font-weight:700;font-size:15px;color:var(--n);border-top:4px solid var(--g)}
+.rh.ot{border-top-color:var(--o)}.rh.bt{border-top-color:var(--pl)}
+.rh span{display:block;font-size:10px;font-weight:600;letter-spacing:.8px;color:var(--g);margin-top:2px}
+.ri{padding:0 18px 14px;list-style:none}
+.ri li{font-size:12px;line-height:1.5;padding:5px 0 5px 14px;border-bottom:1px solid #f0f2f5;position:relative}
+.ri li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--g)}
+
+/* SIDEBAR */
+.sc{background:var(--w);border:1px solid #dde3ed;border-radius:9px;margin-bottom:14px;overflow:hidden}
+.sh{font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:12px 16px;color:var(--n);border-bottom:1px solid #edf0f5}
+.sh.oh{background:var(--o);color:var(--w);border-bottom:none}
+.sv{padding:14px 16px}
+.li{display:flex;align-items:center;gap:9px;padding:4px 0;font-size:12px}
+.ld{width:11px;height:11px;border-radius:2px;flex-shrink:0}
+.st{padding:8px 0;border-bottom:1px solid #f0f2f5}
+.st:last-child{border-bottom:none}
+.st-l{font-size:10px;color:var(--g);font-weight:500}
+.st-v{font-weight:800;font-size:24px;color:var(--n);line-height:1.2}
+.st-n{font-size:10px;color:var(--g)}
+.pi{margin-bottom:12px}
+.pl{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--n);margin-bottom:3px}
+.pb{height:7px;background:#edf0f5;border-radius:4px;overflow:hidden}
+.pf{height:100%;border-radius:4px;width:0;transition:width 1.2s cubic-bezier(.25,.8,.25,1)}
+.rk{display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:1px solid #f0f2f5;font-size:11px;line-height:1.45}
+.rk:last-child{border-bottom:none}
+.rd{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:3px}
+
+/* FOOTER */
+.ft{background:var(--n);color:rgba(255,255,255,.45);text-align:center;padding:22px 28px;font-size:11px;letter-spacing:.3px}
+/* PILLS ROW */
+.pills{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:24px}
+.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);font-weight:600;font-size:11px;padding:5px 12px;border-radius:16px;white-space:nowrap}
+.pill.hi{background:var(--o);color:var(--w);border-color:var(--o)}
+.pill-plus{color:rgba(255,255,255,.35);font-weight:700;font-size:14px}
+.pill-eq{color:var(--o);font-weight:800;font-size:16px}
+/* TIER BADGE */
+.tier{font-weight:800;font-size:13px;letter-spacing:.6px;padding:6px 14px;border-radius:5px;display:inline-block;margin-bottom:14px}
+.tier.ot{background:var(--o);color:var(--w)}.tier.bt{background:var(--pl);color:var(--w)}.tier.gt{background:var(--g);color:var(--w)}
+/* LEFT BORDER CARD */
+.lc{background:var(--w);border:1px solid #dde3ed;border-left:4px solid var(--pl);border-radius:0 9px 9px 0;padding:18px 22px;margin-bottom:14px}
+.lc h4{font-weight:700;font-size:15px;color:var(--n);margin-bottom:4px}
+.lc p{font-size:13px;color:#4a5568;line-height:1.6;margin-bottom:10px}
+.lc.gray-l{border-left-color:var(--g)}
+/* CLOSING BOX */
+.close-box{background:#f0f2f5;border-left:4px solid var(--o);border-radius:0 9px 9px 0;padding:22px 26px;margin-top:28px}
+.close-box h4{font-weight:700;font-size:17px;color:var(--n);margin-bottom:8px}
+.close-box p{font-size:14px;color:#4a5568;line-height:1.7}
+/* VERDICT BADGES */
+.vb{font-weight:700;font-size:9px;letter-spacing:.7px;text-transform:uppercase;padding:3px 9px;border-radius:3px;white-space:nowrap;display:inline-block}
+.s-confirmed{background:#e3fcef;color:#006644}.s-planned{background:#deebff;color:#0747a6}.s-discuss{background:#fff3e0;color:var(--disc)}.s-gap{background:#ffecea;color:var(--gap)}
+/* STAT GRID 3 col */
+.sg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+@media(max-width:700px){.sg3{grid-template-columns:1fr}}
+.sg3-item{background:var(--w);border:1px solid #dde3ed;border-radius:8px;padding:16px;text-align:center}
+.sg3-item .st-l{text-align:center}.sg3-item .st-v{text-align:center}.sg3-item .st-n{text-align:center}
+/* PHASE CARD */
+.pc{background:var(--w);border:1px solid #dde3ed;border-radius:9px;padding:20px 22px;border-top:4px solid var(--g)}
+.pc.ot{border-top-color:var(--ok)}.pc.bt{border-top-color:var(--pl)}
+.pc h4{font-weight:700;font-size:16px;color:var(--n);margin-bottom:4px}
+.pc p{font-size:13px;color:#4a5568;line-height:1.6;margin-bottom:10px}
+.pc-fig{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.pc-fig span{font-size:11px;color:var(--g)}
+.pc-fig strong{color:var(--n)}
+/* GEO COLS */
+.geo2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:700px){.geo2{grid-template-columns:1fr}}
+.geo-card{background:var(--w);border:1px solid #dde3ed;border-radius:8px;padding:16px}
+.geo-card.red-l{border-left:4px solid var(--gap)}.geo-card.green-l{border-left:4px solid var(--ok)}
+.geo-card h4{font-weight:700;font-size:13px;color:var(--n);margin-bottom:8px}
+.geo-card ul{list-style:none;font-size:12px;line-height:1.6;color:#4a5568}
+.geo-card ul li{padding:3px 0;padding-left:14px;position:relative}
+.geo-card ul li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%}
+.geo-card.red-l ul li::before{background:var(--gap)}.geo-card.green-l ul li::before{background:var(--ok)}
+/* POSITION CARDS */
+.pos-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:800px){.pos-grid{grid-template-columns:1fr}}
+.pos-card{background:var(--w);border:1px solid #dde3ed;border-radius:9px;padding:18px;border-top:4px solid var(--g)}
+.pos-card.g-top{border-top-color:var(--ok)}.pos-card.o-top{border-top-color:var(--o)}.pos-card.r-top{border-top-color:var(--gap)}
+.pos-card h4{font-weight:700;font-size:15px;color:var(--n);margin-bottom:4px}
+.pos-card p{font-size:12px;color:#4a5568;line-height:1.55;margin-bottom:8px}
+.pos-tag{font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--g)}
+/* DATA CARDS */
+.data-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:800px){.data-cards{grid-template-columns:1fr}}
+.d-card{background:var(--w);border:1px solid #dde3ed;border-radius:9px;padding:18px}
+.d-card h4{font-weight:700;font-size:14px;color:var(--n);margin-bottom:6px}
+.d-card p{font-size:12px;color:#4a5568;line-height:1.55;margin-bottom:8px}
+.d-card-ft{font-size:10px;color:var(--g);font-style:italic}
+/* DECISION TREE */
+.dtree{background:var(--w);border:1px solid #dde3ed;border-radius:9px;padding:20px;margin-bottom:20px}
+.dtree-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:13px;flex-wrap:wrap}
+.dtree-pill{background:var(--n);color:var(--w);font-weight:600;font-size:11px;padding:5px 12px;border-radius:16px;white-space:nowrap}
+.dtree-arrow{color:var(--o);font-weight:700;font-size:15px}
+.dtree-out{padding:8px 14px;border-radius:7px;font-size:12px;line-height:1.5;margin-bottom:6px}
+.dtree-out.low{background:#fff3e0;border-left:3px solid var(--disc)}
+.dtree-out.mid{background:#deebff;border-left:3px solid var(--pl)}
+.dtree-out.high{background:#e3fcef;border-left:3px solid var(--ok)}
+/* RULES LIST */
+.rules{list-style:none;margin-bottom:20px}
+.rules li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f0f2f5;font-size:13px;line-height:1.55}
+.rules li:last-child{border-bottom:none}
+.rules-ck{color:var(--n);font-weight:800;font-size:16px;flex-shrink:0;margin-top:-1px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd bc">
+<div class="hex"><svg viewBox="0 0 40 44" fill="none"><polygon points="20,2 38,12 38,32 20,42 2,32 2,12" fill="#E87722" stroke="rgba(255,255,255,.2)" stroke-width="1"/><text x="20" y="27" text-anchor="middle" fill="#fff" font-family="Barlow Condensed" font-weight="800" font-size="16" letter-spacing="1">GT</text></svg></div>
+<span class="hd-brand bc">Gulftainer / CEO Office</span>
+<span class="hd-title bc">Logistics Ecosystem — Strategy Session</span>
+<span class="hd-badge bc">Internal</span>
+<span class="hd-date bc">April 2026</span>
+</header>
+
+<!-- NAV -->
+<nav class="nv bc" id="nav">
+<a href="#s1">Asset Map</a>
+<a href="#s2">Gaps &amp; Opportunities</a>
+<a href="#s3">Products &amp; Features</a>
+<a href="#s4">Customer Segments</a>
+<a href="#s5">Discussion Agenda</a>
+<a href="#s6">Roadmap</a>
+<a href="#expansion">Expansion Vision</a>
+<a href="#energy">Energy &amp; Fuel</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero bc">
+<div class="hero-l">Internal Working Session</div>
+<h1>Logistics Ecosystem Development Blueprint</h1>
+<p class="hero-s" style="font-family:Barlow,sans-serif">A structured discussion framework to shape GT's logistics ecosystem strategy across Sharjah, Khorfakkan, and the UAE — covering infrastructure, product, technology, and commercial direction.</p>
+<div class="tags">
+<span class="tag">🚢 KCT East Coast Gateway</span>
+<span class="tag">🏗️ Sajaa Multimodal Hub</span>
+<span class="tag">🚂 Etihad Rail — Confirmed</span>
+<span class="tag">📦 Grade A Warehousing</span>
+<span class="tag">🌐 UAE-wide Corridor</span>
+</div>
+</section>
+
+<div class="wrap">
+<main class="mn">
+
+<!-- ═══ S1 ASSET MAP ═══ -->
+<div class="sec" id="s1">
+<div class="sec-l bc">Where We Stand</div>
+<div class="sec-t bc">Confirmed Asset Map</div>
+<div class="nb bc">
+<h3>The Sharjah Corridor — What Exists Today</h3>
+<p style="font-family:Barlow,sans-serif">GT already operates the UAE's only fully integrated, dual-coast logistics spine. The question is no longer whether the corridor exists — it is how to productise it, fill its gaps, and unlock its full commercial potential.</p>
+</div>
+
+<div class="cor">
+<div class="cn"><div class="nd c"></div><div class="ns c bc">✅ CONFIRMED</div><div class="nn bc">Khorfakkan Container Terminal (KCT)</div><div class="ndesc">East coast deepwater gateway. Outside the Strait of Hormuz. Primary entry point for the corridor.</div><div class="bds"><span class="bd gr bc">5M TEU Capacity</span><span class="bd gr bc">Concession to 2058</span><span class="bd gr bc">Post-Hormuz Strategic Asset</span></div></div>
+
+<div class="cn"><div class="nd c"></div><div class="ns c bc">✅ CONFIRMED</div><div class="nn bc">K-Flow — KCT Bonded Logistics Facility</div><div class="ndesc">50-hectare integrated bonded logistics facility within KCT. Warehousing, cold storage, CFS, transloading, repackaging. Operated with Khorfakkan Customs.</div><div class="bds"><span class="bd gr bc">50 Hectares</span><span class="bd gr bc">Bonded Zone</span><span class="bd gr bc">Cold Storage</span><span class="bd gr bc">CFS Operations</span></div></div>
+
+<div class="cn"><div class="nd c"></div><div class="ns c bc">✅ CONFIRMED</div><div class="nn bc">Khorfakkan Inland Corridor</div><div class="ndesc">Bonded road corridor connecting KCT to Sajaa, Sharjah, and the wider UAE. The physical backbone of the ecosystem.</div><div class="bds"><span class="bd gr bc">Bonded Movement</span><span class="bd gr bc">KCT → Sajaa → UAE</span></div></div>
+
+<div class="cn"><div class="nd c"></div><div class="ns c bc">✅ CONFIRMED</div><div class="nn bc">Sajaa Dry Port + Etihad Rail Station</div><div class="ndesc">GT's second bonded dry port, launched December 2025. Etihad Rail station at Sajaa confirmed — making this the ecosystem's multimodal nerve centre. Road + Rail interchange point for the entire corridor.</div><div class="bds"><span class="bd gr bc">Rail Station — Confirmed</span><span class="bd gr bc">Bonded Dry Port</span><span class="bd gr bc">ICD</span><span class="bd gr bc">Road–Rail Hub</span></div></div>
+
+<div class="cn"><div class="nd p"></div><div class="ns p bc">🔵 PLANNED</div><div class="nn bc">Grade A Warehousing Park — Maleha / Sajaa</div><div class="ndesc">Planned Grade A logistics and industrial park adjacent to Sajaa hub. Serves both large 3PLs (BTS) and SME manufacturers. Immediately adjacent to the Etihad Rail station.</div><div class="bds"><span class="bd bl bc">Planned</span><span class="bd bl bc">Grade A Spec</span><span class="bd bl bc">BTS + SME Units</span></div></div>
+
+<div class="cn"><div class="nd c"></div><div class="ns c bc">✅ CONFIRMED</div><div class="nn bc">SIIP — Sajaa Industrial Investment Park</div><div class="ndesc">GT's first leasehold initiative. Fully bonded logistics facility. Connects west-coast ports via Emirates Road to KCT via the inland corridor.</div><div class="bds"><span class="bd gr bc">750,000 sqm</span><span class="bd gr bc">Bonded</span><span class="bd gr bc">Light Industrial + Logistics</span></div></div>
+
+<div class="cn"><div class="nd c"></div><div class="ns c bc">✅ CONFIRMED</div><div class="nn bc">Sharjah ICD — UAE's First Bonded Inland Depot</div><div class="ndesc">Landmark bonded ICD at the Sharjah–Dubai border. 24/7 operations, customs on-site, LCL/FCL, reefer points, warehousing. Primary west-side distribution hub.</div><div class="bds"><span class="bd gr bc">First Bonded ICD in UAE</span><span class="bd gr bc">Dubai Border</span><span class="bd gr bc">18,000 TEU Capacity</span></div></div>
+
+<div class="cn"><div class="nd c"></div><div class="ns c bc">✅ CONFIRMED</div><div class="nn bc">SCT Port Khalid + Hamriyah — West Coast</div><div class="ndesc">GT operates Sharjah Container Terminal and Hamriyah Port, completing the dual-coast loop. GCC import/export gateway on the Arabian Gulf side.</div><div class="bds"><span class="bd gr bc">Arabian Gulf</span><span class="bd gr bc">GCC Gateway</span></div></div>
+</div>
+</div>
+
+<!-- ═══ S2 GAPS ═══ -->
+<div class="sec" id="s2">
+<div class="sec-l bc">What's Missing</div>
+<div class="sec-t bc">Infrastructure &amp; Non-Infrastructure Gaps</div>
+<p class="sec-i">Click each gap to expand the discussion notes. These are the areas for team input and decision during today's session.</p>
+
+<!-- GAP A Digital -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">💻</span><div class="ct bc"><div class="ct-t">Unified Digital Platform</div><div class="ct-s">Technology — Highest Priority Gap</div></div><span class="sp r bc">Critical Gap</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">GT operates multiple world-class physical assets — but there is no single customer-facing digital interface that unifies them. Competitors like DP World (CargoES) and AD Ports (MAQTA) have this. GT does not.</div>
+<table class="dt"><thead><tr><th>Module</th><th>What It Does</th><th>Priority</th></tr></thead><tbody>
+<tr><td>Track &amp; Trace</td><td>Container visible from KCT vessel arrival → K-Flow → Corridor → Sajaa → Rail → final delivery. One dashboard.</td><td><span class="pt r bc">Must Have</span></td></tr>
+<tr><td>Slot Booking</td><td>Online truck slot booking at KCT gate + Sajaa Dry Port. Driver gets QR code, eliminates queuing.</td><td><span class="pt r bc">Must Have</span></td></tr>
+<tr><td>Inventory Portal</td><td>Customer sees bonded stock at K-Flow / Sajaa live. Requests partial release, repack, relabelling via app.</td><td><span class="pt r bc">Must Have</span></td></tr>
+<tr><td>e-Customs Integration</td><td>Direct API to Mirsal 2. Auto-document generation, status push to customer.</td><td><span class="pt r bc">Must Have</span></td></tr>
+<tr><td>Rail Booking</td><td>Customer books rail slot from Sajaa → destination. Sees schedule, price, ETA.</td><td><span class="pt b bc">High</span></td></tr>
+<tr><td>Rate Engine</td><td>Self-serve: ship X containers from KCT to Abu Dhabi bonded — instant quote.</td><td><span class="pt b bc">High</span></td></tr>
+<tr><td>Analytics</td><td>Customer's own dwell time, cost per TEU, inventory KPIs.</td><td><span class="pt a bc">Phase 2</span></td></tr>
+</tbody></table>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>Does GT currently have a WMS? Does Momentum Logistics have a TMS? Are they connected or separate?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Build vs. white-label (CargoWise, Blue Yonder, Oracle WMS) vs. partner with UAE logistics tech player?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>What does the current customer experience look like for someone using KCT + K-Flow + Corridor — phone calls or a portal?</span></div>
+</div></div></div>
+
+<!-- GAP B Truck -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🚛</span><div class="ct bc"><div class="ct-t">Truck Staging &amp; Landside Hub at KCT</div><div class="ct-s">Physical Infrastructure — Fast Win</div></div><span class="sp r bc">Missing</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">KCT has no organised truck staging zone. With Sajaa Rail confirmed and volumes increasing, long truck queues on public roads will worsen unless addressed now. This is the fastest buildable item on the list.</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Gated bays (number to be determined) with ANPR cameras for auto-registration</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Digital slot booking system — linked to GT digital platform</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Driver amenities: prayer room, canteen, ablution, showers, rest area</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Pre-clearance documentation window — Customs agent desk on-site</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Fuel station (consider EV charging provision for future fleet)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Dangerous goods segregation bays</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Reefer plug points for waiting refrigerated trucks</span></li>
+</ul>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>What is the current daily truck count at KCT? What is peak vs. trough — this determines bay count.</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Is there identified land adjacent to KCT already, or does this require land allocation?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>Does GT operate this, or does Momentum Logistics manage it?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>What is the fee model — per hour, per day, surge pricing?</span></div>
+</div></div></div>
+
+<!-- GAP C Cold Chain -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">❄️</span><div class="ct bc"><div class="ct-t">Cold Chain &amp; Food Logistics Cluster</div><div class="ct-s">Specialist Product — High Differentiation</div></div><span class="sp a bc">Underdeveloped</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">K-Flow has cold storage — but it is not yet positioned as a dedicated cold chain product. Fujairah lacks reefer plug capacity, making KCT the east coast's natural cold chain advantage. Current geopolitical climate amplifies the food security argument.</div>
+<div class="mg">
+<div class="mc bc"><h4>🌡️ Temperature Zones</h4><p>Ambient / Chilled +2–8°C / Frozen -18°C / Pharma-grade -25°C. Each zone separately certified and monitored.</p></div>
+<div class="mc bc"><h4>🔌 Reefer Infrastructure</h4><p>Port-side reefer plug points — currently the east coast's biggest gap vs. Jebel Ali and Khalifa Port.</p></div>
+<div class="mc bc"><h4>💊 Pharma GDP Cell</h4><p>Dedicated GDP-compliant pharmaceutical storage licensed by Sharjah Health Authority. Separate air handling, continuous logging.</p></div>
+<div class="mc bc"><h4>🥩 Halal Food Room</h4><p>Bonded, sealed, separate air handling. Halal-certified food processing and repackaging room within K-Flow bonded zone.</p></div>
+</div>
+<div style="font-weight:700;font-size:12px;color:var(--n);margin-bottom:6px" class="bc">Target Certifications</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>HACCP certification</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>ISO 22000 (Food Safety Management)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>GDP (Good Distribution Practice) for pharma</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>IoT temperature logging with customer-facing compliance dashboard</span></li>
+</ul>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>What is the current reefer plug capacity at KCT vs. what is needed for a standalone cold chain cluster?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Is there appetite to pursue pharma GDP licensing — and does GT have the operational capability for it?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>Who are the 3–5 cold chain customers GT can immediately approach at KCT today?</span></div>
+</div></div></div>
+
+<!-- GAP D Grade A -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🏗️</span><div class="ct bc"><div class="ct-t">Grade A Warehousing Park — Maleha / Sajaa</div><div class="ct-s">Planned Asset — Features &amp; Anchor Strategy</div></div><span class="sp b bc">In Planning</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">The park's location adjacent to the Etihad Rail station at Sajaa is a fundamental differentiator. No other industrial park in the Northern Emirates offers rail + port + bonded corridor access in one location. This must be the core pitch.</div>
+<div style="font-weight:700;font-size:12px;color:var(--n);margin-bottom:6px" class="bc">Grade A Physical Spec</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Clear height: minimum 12m (ideally 14m for high-bay racking / ASRS compatibility)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Floor load: 5–7 tonnes/sqm (supports racking + forklift traffic)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Column spacing: 12m × 24m minimum (robotics-compatible floor layout)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>ESFR sprinkler system (early suppression, fast response — required by 3PLs)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Dock door ratio: 1 per 800–1,000 sqm</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>FM2 floor flatness standard</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>LED lighting with motion sensors throughout</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Solar panels on roof (UAE Net Zero 2050 + ESG tenant requirements)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>EV charging in truck yard (10 units minimum to future-proof)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Fibre optic connectivity — 1Gbps minimum</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>RFID gantries at dock doors (auto-records every pallet in/out)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>IoT sensors: temperature, humidity, movement — streamed to GT platform</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>CCTV with AI object detection and alerting</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>WMS pre-integrated — tenants plug SKUs, GT system manages inventory</span></li>
+</ul>
+<div class="ug">
+<div class="mc bc"><h4>🏢 Type A — Large BTS</h4><p>10,000–50,000 sqm plots. Build-to-suit for 3PLs, multinationals. Long leases 5–15 years. Anchor tenant de-risks the park.</p></div>
+<div class="mc bc"><h4>🏠 Type B — SME Units</h4><p>500–3,000 sqm pre-built units. Short-term leases. Plug-and-play. Serves Northern Emirates manufacturers displaced from Dubai's full industrial zones.</p></div>
+</div>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>What is the total land area secured at Maleha? Is it sufficient for both unit types in Phase 1?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Do we have any anchor tenant LOIs in progress? Which 3PL or FMCG player is being approached first?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>What is the target LEED or sustainability certification for the park?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>Who is the lead developer — GT build and own, or a JV structure?</span></div>
+</div></div></div>
+
+<!-- GAP E Rail -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🚂</span><div class="ct bc"><div class="ct-t">Sajaa Dry Port — Rail Integration Specs</div><div class="ct-s">Design Requirements — Rail Station Confirmed</div></div><span class="sp g bc">Rail Confirmed</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">Sajaa Dry Port must now be designed as a Rail-Road-Bonded Intermodal Hub — not simply a road-based ICD. The rail station changes the facility's design class entirely. Every spec below should be treated as a design requirement, not an aspiration.</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Rail ramp / container loading dock integrated into the dry port footprint</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Intermodal yard: dedicated lane separating rail-fed from truck-fed containers</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Priority customs lane for rail cargo — mirror the Khalifa–Fujairah bonded corridor model</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Bonded rail corridor designation — formal application through Sharjah Customs authority</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Rail schedule integration: dry port gate ops aligned to Etihad Rail freight windows</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>ISPS Code compliance (International Ship &amp; Port Facility Security)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>24/7 operations — must match KCT terminal hours</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Automated gate: 6–10 lanes, ANPR, digital slot booking linked to GT platform</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Customs office on-site (Sharjah Customs staffed, Mirsal 2 connected)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Reefer points in container yard (minimum to be determined)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Dangerous goods compound: segregated, fire-suppressed, IATA/IMDG compliant</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Container repair yard</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Weighbridges (minimum 2)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Bonded warehouse block within footprint</span></li>
+</ul>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>Is the current Sajaa Dry Port design already incorporating the rail ramp, or does the design need to be revised now?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Has GT formally applied to be included in the UAE bonded rail corridor framework alongside Khalifa Port and Fujairah?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>What is the Etihad Rail freight schedule — how many train movements per day/week are planned via Sajaa?</span></div>
+</div></div></div>
+
+<!-- GAP F Next Node -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">📍</span><div class="ct bc"><div class="ct-t">Next Geographic Node</div><div class="ct-s">Strategic Expansion — Where Next?</div></div><span class="sp a bc">For Discussion</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<p class="sec-i" style="margin-bottom:14px">The current corridor covers KCT → Sajaa → Sharjah ICD → SCT/Hamriyah. Three logical next nodes — which one does the team prioritise?</p>
+<div class="tg">
+<div class="tc ot bc"><h4>🇸🇦 Saudi End Node</h4><p>Bonded depot at the Saudi side of the Dammam Landbridge. Completes the Landbridge as a door-to-door bonded product. GT already operates in Jubail.</p></div>
+<div class="tc bt bc"><h4>🏔️ Northern Emirates Depot</h4><p>Lightweight satellite: RAK or UAQ. Small container yard + customs window. Captures Northern Emirates origin cargo currently going through Jebel Ali.</p></div>
+<div class="tc bc"><h4>🏙️ Abu Dhabi End Node</h4><p>Receiving hub near ICAD / Musaffah corridor. Rail delivers from Sajaa. Makes GT a genuine Abu Dhabi logistics option — currently absent.</p></div>
+</div>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>Which of these three nodes delivers the most incremental cargo volume to the GT ecosystem?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Does the Saudi node require a new entity or can it sit under existing GT KSA operations?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>Is there a Northern Emirates manufacturer or freight forwarder community actively requesting a GT presence in RAK/UAQ?</span></div>
+</div></div></div>
+</div>
+
+<!-- ═══ S3 PRODUCTS ═══ -->
+<div class="sec" id="s3">
+<div class="sec-l bc">Commercial Layer</div>
+<div class="sec-t bc">Products &amp; Features to Define</div>
+
+<!-- PROD A Corridor -->
+<div class="cd op" data-c><div class="ch" onclick="tg(this)"><span class="ci">🔗</span><div class="ct bc"><div class="ct-t">The Sharjah Corridor — Named Product</div><div class="ct-s">Non-Infrastructure Gap — Zero Capex Required</div></div><span class="sp a bc">Needs Definition</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">GT has all the physical assets for a world-class bonded corridor — but it is not a named, priced, or marketed product. This is the lowest-cost, highest-return gap to close. A commercial product can be launched in 3–6 months with no capex.</div>
+<div style="font-weight:700;font-size:12px;color:var(--n);margin-bottom:6px" class="bc">What the Product Must Include</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>A defined name (e.g. "Sharjah Corridor", "GT Corridor", "SharjahLink" — TBD)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>A defined transit time SLA: KCT discharge → Sajaa Dry Port in a guaranteed window</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>A defined price per TEU for each corridor leg (road + rail options)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>A single contract covering: port → K-Flow → corridor → Sajaa → storage → rail → delivery</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>A single invoice — not 4 separate GT/Momentum invoices</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>A rate card aligned to Etihad Rail freight schedule windows</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>A dedicated commercial owner at Momentum Logistics who sells it</span></li>
+</ul>
+</div></div></div>
+
+<!-- PROD B Journeys -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🗺️</span><div class="ct bc"><div class="ct-t">Customer Journeys</div><div class="ct-s">3 Core Use Cases</div></div><span class="sp a bc">To Validate</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="jl bc">Journey 1 — "Import → Distribute to GCC via Rail"</div>
+<div class="fr bc"><span class="fb">Vessel @ KCT</span><span class="fa">→</span><span class="fb">K-Flow Bonded</span><span class="fa">→</span><span class="fb">Inland Corridor</span><span class="fa">→</span><span class="fb">Sajaa Dry Port</span><span class="fa">→</span><span class="fb">Rail</span><span class="fa">→</span><span class="fb">GCC</span><span class="fa">→</span><span class="fb">Priority Customs</span></div>
+<p class="fc">Target: FMCG importers from Asia distributing to UAE, Saudi, Kuwait, Qatar. KCT avoids Jebel Ali congestion premium. Rail replaces expensive bonded trucking across UAE.</p>
+
+<div class="jl bc">Journey 2 — "Northern Emirates Export via KCT"</div>
+<div class="fr bc"><span class="fb">Factory</span><span class="fa">→</span><span class="fb">Sajaa Stuffing</span><span class="fa">→</span><span class="fb">Container Sealed</span><span class="fa">→</span><span class="fb">Bonded Truck</span><span class="fa">→</span><span class="fb">KCT</span><span class="fa">→</span><span class="fb">Vessel Departs</span></div>
+<p class="fc">Target: Sharjah, RAK, UAQ, Ajman manufacturers exporting to East Africa, India, Pakistan, Iraq. Full export cycle within GT ecosystem — Jebel Ali not required.</p>
+
+<div class="jl bc">Journey 3 — "Abu Dhabi Importer Using KCT as Gateway"</div>
+<div class="fr bc"><span class="fb">Vessel</span><span class="fa">→</span><span class="fb">KCT</span><span class="fa">→</span><span class="fb">K-Flow Bonded</span><span class="fa">→</span><span class="fb">Corridor</span><span class="fa">→</span><span class="fb">Sajaa</span><span class="fa">→</span><span class="fb">Rail</span><span class="fa">→</span><span class="fb">Abu Dhabi Hub</span><span class="fa">→</span><span class="fb">Customs Release</span></div>
+<p class="fc">Target: Abu Dhabi importers currently using Khalifa Port. Rail from Sajaa makes KCT a viable Abu Dhabi gateway — entirely new customer segment enabled by the Rail station.</p>
+</div></div></div>
+</div>
+
+<!-- ═══ S4 SEGMENTS ═══ -->
+<div class="sec" id="s4">
+<div class="sec-l bc">Commercial Targets</div>
+<div class="sec-t bc">Customer Segments &amp; Value Proposition</div>
+<div style="overflow-x:auto">
+<table class="dt">
+<thead><tr><th>Segment</th><th>Their Pain Today</th><th>GT's Offer</th><th>Revenue Streams</th></tr></thead>
+<tbody>
+<tr><td><strong>Asian FMCG / Food Importers</strong></td><td>Jebel Ali congestion, expensive bonded trucking to GCC</td><td>KCT → K-Flow → Sajaa → Rail to GCC. Lower dwell, single bonded contract, faster transit to Saudi/Kuwait/Qatar</td><td>Port handling + storage + VAS + corridor + rail</td></tr>
+<tr><td><strong>Northern Emirates Manufacturers</strong></td><td>No export-ready bonded logistics near them. Must truck to Jebel Ali</td><td>Sajaa Dry Port stuffing + KCT direct export to East Africa, India, Pakistan, Iraq</td><td>Stuffing + storage + port handling + freight</td></tr>
+<tr><td><strong>3PL / Freight Forwarders</strong></td><td>Need Northern Emirates distribution base with port access. Only Dubai options exist</td><td>Grade A Park at Maleha/Sajaa: bonded, port-connected, rail access, WMS included</td><td>Long-term BTS lease + WMS-as-a-service + cargo handling</td></tr>
+<tr><td><strong>Abu Dhabi Importers</strong></td><td>Default to Khalifa Port. No east-coast alternative with onward rail</td><td>KCT vessel arrival + Rail from Sajaa to Abu Dhabi hub. Competitive transit time, no Hormuz premium</td><td>Port + corridor + rail + distribution</td></tr>
+<tr><td><strong>Pharma / Cold Chain Operators</strong></td><td>Limited GDP-certified cold storage on east coast. Fujairah has minimal reefer capacity</td><td>Expanded K-Flow cold chain cluster: multi-temp zones, GDP cell, halal food room, IoT logging</td><td>Premium cold storage rate + VAS + compliance reporting</td></tr>
+<tr><td><strong>E-Commerce Fulfillment</strong></td><td>All fulfillment infrastructure concentrated in Dubai at Dubai rents</td><td>Grade A fulfillment center at Maleha: KCT import connectivity, Sharjah residential catchment, lower cost</td><td>Warehouse lease + pick/pack fees + last-mile handoff</td></tr>
+</tbody>
+</table>
+</div>
+<div class="ob">Key commercial question: Which of these 6 segments does GT go after first? The answer should drive anchor tenant selection for the Grade A Park and the initial product prioritisation.</div>
+</div>
+
+<!-- ═══ S5 AGENDA ═══ -->
+<div class="sec" id="s5">
+<div class="sec-l bc">Session Agenda</div>
+<div class="sec-t bc">Discussion Questions by Theme</div>
+
+<!-- Agenda A Strategic -->
+<div class="cd op" data-c><div class="ch" onclick="tg(this)"><span class="ci">🎯</span><div class="ct bc"><div class="ct-t">Strategic Direction</div><div class="ct-s">What business are we actually building?</div></div><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="dq"><span class="dn bc">1</span><span>What is GT's primary identity in 5 years — port operator, logistics ecosystem builder, or real estate developer? The answer defines everything else.</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Should Sharjah have an equivalent to Dubai Industrial Strategy 2030 and Abu Dhabi Industrial Strategy 2031? Can GT help write it, and should that be part of our positioning?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>The UAE logistics market is $41bn and growing at 8.2% CAGR. Dubai and Abu Dhabi industrial zones are near-full. What specific share of the spillover should GT be targeting?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>Is GT building this ecosystem primarily for Sharjah-based customers — or as a national alternative to Jebel Ali for any UAE or GCC importer/exporter?</span></div>
+</div></div></div>
+
+<!-- Agenda B Partnership -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🤝</span><div class="ct bc"><div class="ct-t">Partnership &amp; Ownership Structure</div><div class="ct-s">Who builds, who owns, who operates?</div></div><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="dq"><span class="dn bc">1</span><span>For the Grade A Park — is this GT-funded and GT-owned, a JV, or a development where GT manages and a third party owns the real estate?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>What is the investment structure for the Sajaa Dry Port expansion? Who provides the capital?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>Should GT explore bringing in a logistics REIT or institutional investor for the Grade A Park — freeing GT capital for operations?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>Who are the top 3 anchor tenants GT can realistically sign LOIs with in the next 6 months? What does the pitch look like?</span></div>
+<div class="dq"><span class="dn bc">5</span><span>How does the Etihad Rail commercial agreement work — is GT a customer of Etihad Rail, a joint operator, or something else?</span></div>
+</div></div></div>
+
+<!-- Agenda C Revenue -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">💰</span><div class="ct bc"><div class="ct-t">Business Model &amp; Revenue</div><div class="ct-s">How do we make money differently?</div></div><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="dq"><span class="dn bc">1</span><span>Today GT earns primarily from throughput (volume-based). The ecosystem adds rental income, value-added services, and rail corridor fees. What should the revenue mix look like in 5 years?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>UAE Grade A logistics assets yield 7.25–8.25%. Is logistics real estate income a strategic objective for GT, or just a byproduct of the ecosystem?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>What is the pricing model for the Sharjah Corridor as a product? Per TEU? Bundle with port handling? Subscription for 3PLs?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>How does GT monetise the digital platform — as a cost centre serving physical customers, or as a standalone SaaS product sold to third-party logistics operators?</span></div>
+</div></div></div>
+
+<!-- Agenda D Quick Wins -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">⚡</span><div class="ct bc"><div class="ct-t">Quick Wins — What Can Move Now</div><div class="ct-s">What requires no external approval to start?</div></div><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="dq"><span class="dn bc">1</span><span>The Sharjah Corridor as a named product needs zero capex. Who is responsible for packaging and launching it within 90 days?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>The truck staging hub at KCT is a fast-build, revenue-generating asset. What is blocking it — land, funding, approvals?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>Can the digital platform RFP be issued in Q2 2026? Who owns the technology decision?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>Cold chain certifications (HACCP, GDP) are commercial decisions as much as operational ones. Who initiates the licensing process?</span></div>
+<div class="dq"><span class="dn bc">5</span><span>Which 10 KCT customers should Momentum Logistics call this month to offer the K-Flow + Sajaa + Rail package?</span></div>
+</div></div></div>
+</div>
+
+<!-- ═══ S6 ROADMAP ═══ -->
+<div class="sec" id="s6">
+<div class="sec-l bc">Execution</div>
+<div class="sec-t bc">Strategic Roadmap — Phasing</div>
+<div class="rg">
+
+<div class="rp"><div class="rh ot bc">Phase 1 — ACTIVATE<span>0–18 Months</span></div><ul class="ri">
+<li>Launch "Sharjah Corridor" as a named commercial product with SLA + rate card</li>
+<li>Begin KCT Truck Staging Hub construction</li>
+<li>Finalise Sajaa Dry Port rail ramp design integration</li>
+<li>Issue digital platform RFP and select technology partner</li>
+<li>Apply for bonded rail corridor designation at Sajaa</li>
+<li>Pursue cold chain certifications (HACCP, GDP) at K-Flow</li>
+<li>Sign 2–3 anchor tenant LOIs for Grade A Park</li>
+<li>Launch commercial outreach to top 10 KCT customers</li>
+</ul></div>
+
+<div class="rp"><div class="rh bt bc">Phase 2 — BUILD<span>18–48 Months</span></div><ul class="ri">
+<li>Grade A Warehousing Park — Phase 1 opens (anchor tenants in)</li>
+<li>Sajaa Dry Port — rail intermodal operations live</li>
+<li>Digital platform live: Track &amp; Trace, Slot Booking, Inventory Portal, e-Customs</li>
+<li>Cold chain cluster fully certified and marketed</li>
+<li>Evaluate Northern Emirates satellite depot (RAK/UAQ)</li>
+<li>Saudi Landbridge node — initiate planning</li>
+<li>Rail product bookable through GT digital platform</li>
+</ul></div>
+
+<div class="rp"><div class="rh bc">Phase 3 — SCALE<span>4–10 Years</span></div><ul class="ri">
+<li>Grade A Park — Phase 2 expansion (SME units + BTS extension)</li>
+<li>Northern Emirates satellite depot operational</li>
+<li>Saudi Landbridge node live — door-to-door bonded product complete</li>
+<li>Abu Dhabi receiving hub via Rail</li>
+<li>Explore East Coast Economic Zone designation</li>
+<li>GT as logistics real estate income alongside port income</li>
+<li>Digital platform extended to third-party logistics operators</li>
+</ul></div>
+
+</div>
+</div>
+
+<!-- ═══ S7 EXPANSION VISION ═══ -->
+<div class="sec" id="expansion">
+<div class="sec-l bc">The Long Game</div>
+<div class="sec-t bc">Expansion Vision — Building the Next Jebel Ali</div>
+
+<div class="nb bc">
+<h3>The JAFZA Blueprint — What We're Building Toward</h3>
+<p style="font-family:Barlow,sans-serif">JAFZA started with 19 companies in 1985 next to a new port. Today it hosts 11,000+ businesses, generates $190bn in annual trade, contributes 36% of Dubai's GDP, and attracts 74% of Dubai's FDI in manufacturing and logistics. The formula was never just a port — it was a complete economic city built in layers over 40 years. KCT has the port. It has the location advantage JAFZA never had — outside the Strait, facing Asia directly. What it does not yet have is the ecosystem layered around it.</p>
+<div class="pills bc" style="margin-top:16px">
+<span class="pill">Deep Water Port</span><span class="pill-plus">+</span>
+<span class="pill">Free Zone</span><span class="pill-plus">+</span>
+<span class="pill">Industrial Land</span><span class="pill-plus">+</span>
+<span class="pill">Rail</span><span class="pill-plus">+</span>
+<span class="pill">Road</span><span class="pill-plus">+</span>
+<span class="pill">Maritime Services</span><span class="pill-plus">+</span>
+<span class="pill">Workforce City</span><span class="pill-eq">=</span>
+<span class="pill hi">Economic Ecosystem</span>
+</div>
+</div>
+
+<!-- GAP MAP TABLE -->
+<div style="font-weight:700;font-size:14px;color:var(--n);margin-bottom:10px" class="bc">KCT Ecosystem Gap Map vs. JAFZA</div>
+<div style="overflow-x:auto;margin-bottom:28px">
+<table class="dt">
+<thead><tr><th>Ecosystem Layer</th><th>Jebel Ali Has</th><th>KCT East Coast Has</th><th>Gap Status</th></tr></thead>
+<tbody>
+<tr><td>Deep water port</td><td>Jebel Ali Port</td><td>KCT 5M TEU</td><td><span class="pt" style="background:#e3fcef;color:#006644">✓ No Gap</span></td></tr>
+<tr><td>Bonded logistics facility</td><td>JAFZA bonded warehouses</td><td>K-Flow 50ha</td><td><span class="pt a">⚠ Partial</span></td></tr>
+<tr><td>Free zone designation</td><td>JAFZA 57 sq km · 11,000+ companies</td><td>None on east coast</td><td><span class="pt r">✗ Critical</span></td></tr>
+<tr><td>Rail integration</td><td>Etihad Rail bonded corridor</td><td>Sajaa station confirmed</td><td><span class="pt b">→ Incoming</span></td></tr>
+<tr><td>Grade A industrial park</td><td>Dubai Industrial City</td><td>Planned Maleha/Sajaa</td><td><span class="pt b">→ In Progress</span></td></tr>
+<tr><td>Dry port / ICD</td><td>Multiple ICDs</td><td>Sajaa Dry Port live</td><td><span class="pt" style="background:#e3fcef;color:#006644">✓ Done</span></td></tr>
+<tr><td>Ship repair / dry dock</td><td>Dubai Dry Docks World</td><td>None at KCT</td><td><span class="pt r">✗ Critical</span></td></tr>
+<tr><td>Airport proximity</td><td>Al Maktoum 26km</td><td>Nearest 90 mins away</td><td><span class="pt r">✗ Structural</span></td></tr>
+<tr><td>Bunkering hub</td><td>Well developed</td><td>Limited vs Fujairah</td><td><span class="pt a">⚠ Gap</span></td></tr>
+<tr><td>Sector clusters</td><td>16 dedicated clusters</td><td>No defined clusters at KCT</td><td><span class="pt r">✗ Missing</span></td></tr>
+<tr><td>Workforce housing</td><td>Integrated JAFZA accommodation</td><td>Very limited near KCT</td><td><span class="pt r">✗ Missing</span></td></tr>
+<tr><td>Business hotels / crew stay</td><td>Multiple near JA Port</td><td>Very limited in KFK</td><td><span class="pt r">✗ Missing</span></td></tr>
+<tr><td>Commercial offices / HQs</td><td>Jafza One + towers</td><td>None near KCT</td><td><span class="pt a">⚠ Gap</span></td></tr>
+<tr><td>SME incubator</td><td>JAFZA incubators</td><td>None</td><td><span class="pt r">✗ Missing</span></td></tr>
+<tr><td>Cold chain cluster</td><td>Advanced multi-sector</td><td>Early stage at K-Flow</td><td><span class="pt a">⚠ Developing</span></td></tr>
+<tr><td>Food security / agri-logistics</td><td>JAFZA food cluster · 567+ companies</td><td>No dedicated cluster</td><td><span class="pt r">✗ Missing</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ── TIER 1 ── -->
+<div class="tier ot bc">TIER 1 — GAME-CHANGING — ADDRESS WITHIN 5 YEARS</div>
+
+<!-- T1 Card 1 — Free Zone -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🏛️</span><div class="ct bc"><div class="ct-t">KCT Free Zone</div><div class="ct-s">The Single Biggest Missing Piece</div></div><span class="sp r bc">Critical Gap</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">Every world-class container terminal of KCT's scale sits adjacent to a free zone. Jebel Ali has JAFZA. Khalifa Port has KEZAD. Fujairah Port has Fujairah Free Zone. KCT — handling 5M TEUs — has no adjacent free zone. This is the single layer that transforms KCT from a throughput terminal into an economic engine.</div>
+<div style="font-weight:700;font-size:12px;color:var(--n);margin-bottom:6px" class="bc">What a KCT Free Zone Unlocks</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>100% foreign ownership for companies basing at KCT — not just shipping through it</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>0% corporate tax on qualifying income</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Permanent business licensing — companies locate here, not just handle cargo</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Self-sustaining community of manufacturers, traders, maritime services, 3PLs</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Same FDI magnet effect JAFZA had on Dubai — applied to Sharjah's east coast</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Compete directly with Fujairah Free Zone for east coast business registration</span></li>
+</ul>
+<div style="font-weight:700;font-size:12px;color:var(--n);margin-bottom:8px" class="bc">Proposed Sector Clusters</div>
+<div class="mg">
+<div class="mc bc"><h4>⚓ Maritime &amp; Ship Services</h4><p>Repair, chandlering, crew change, classification society offices</p></div>
+<div class="mc bc"><h4>❄️ Cold Chain &amp; Food Security</h4><p>Multi-temp, pharma GDP, halal processing</p></div>
+<div class="mc bc"><h4>🧱 Aggregates &amp; Building Materials</h4><p>Already KFK's focus industry — formalise with bonded cluster</p></div>
+<div class="mc bc"><h4>🏭 Light Manufacturing</h4><p>Serving India, East Africa, Iraq via KCT direct routes</p></div>
+</div>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>Does a KCT Free Zone require a new Emiri Decree or can it sit under existing SPA authority?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>What is the minimum viable land area for Phase 1 — is that land available adjacent to KCT today?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>Should GT be the developer/operator or does this sit purely with SPA?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>What three companies would GT call first to anchor the free zone?</span></div>
+</div></div></div>
+
+<!-- T1 Card 2 — Ship Repair -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🚢</span><div class="ct bc"><div class="ct-t">Ship Repair &amp; Maritime Services Cluster</div><div class="ct-s">Direct Revenue from Existing Vessel Traffic</div></div><span class="sp r bc">Missing</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">Every vessel calling KCT needs services: fuel, repairs, crew change, spare parts, provisions. Currently these are supplied by Fujairah or Dubai-based operators — every vessel call leaks commercial value away from KFK.</div>
+<div style="font-weight:700;font-size:12px;color:var(--n);margin-bottom:6px" class="bc">Phase 1 — Low Capex Entry</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Afloat repair berths — vessels repaired while floating, no dry dock needed yet</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Ship chandlering hub — bonded warehouse for food, equipment, spare parts</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Crew change centre — KCT is a major crew change port with no dedicated facility</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Bunkering expansion — dedicated berths + storage tanks to challenge Fujairah</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Marine spare parts bonded store — parts imported under bond, no duty until used</span></li>
+</ul>
+<div style="font-weight:700;font-size:12px;color:var(--n);margin-bottom:6px" class="bc">Phase 2 — Major Build</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Classification society offices — Lloyd's, DNV, Bureau Veritas; currently absent at KCT</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Dry dock — major capex but transformative; every diverting vessel becomes a potential customer</span></li>
+</ul>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>What is current split of marine services revenue at KCT vs. going to Fujairah/Dubai operators?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Is there land adjacent to KCT berths for a maritime services zone?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>GT operate bunkering itself or JV with established bunker trader?</span></div>
+<div class="dq"><span class="dn bc">4</span><span>What would attract one classification society to open a KCT branch?</span></div>
+</div></div></div>
+
+<!-- T1 Card 3 — Al Harai -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">🏭</span><div class="ct bc"><div class="ct-t">Al Harai Industrial City — Masterplan Not Just Plots</div><div class="ct-s">Government Has Allocated Land — Needs a Developer Vision</div></div><span class="sp a bc">Opportunity</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">The Sharjah Ruler approved 450 industrial plots and 60 commercial plots in Al Harai area near Khorfakkan. Land is being allocated. The risk is it develops into scattered low-spec workshops. The opportunity is a masterplan that turns it into a port-integrated industrial city.</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Port-adjacent design — direct road from zone to KCT gate, no re-entry onto public roads</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Bonded zone extension — Al Harai as extension of K-Flow bonded status</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Sector zoning from day one — aggregates, food processing, maritime supplies, light manufacturing</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Shared infrastructure — centralised power, water, waste, fibre</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Plug-and-play units — pre-built shells ready in 60 days</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Connected via Khorfakkan Inland Corridor to Sajaa and Rail</span></li>
+</ul>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>Does GT have a relationship with Al Harai plot allocation authority to propose a masterplan role?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>KFK has two existing small industrial areas (Zubarah and Al Haray) — are these being upgraded or is Al Harai separate?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>What is a realistic timeline from land allocation to first tenant?</span></div>
+</div></div></div>
+
+<!-- T1 Card 4 — Bunkering -->
+<div class="cd" data-c><div class="ch" onclick="tg(this)"><span class="ci">⛽</span><div class="ct bc"><div class="ct-t">Bunkering &amp; Marine Fuel Hub</div><div class="ct-s">Fast Revenue — Growing Demand</div></div><span class="sp a bc">Fast Win</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="ob">Fujairah is top 3 globally for bunkering. KCT is 60km away with hundreds of vessel calls per year and almost no bunkering infrastructure. Every ship that gets fuel from Fujairah is revenue KCT loses.</div>
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Dedicated bunkering berths at KCT or anchorage-based barges</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Fuel storage tanks — bonded, outside UAE customs for re-export</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Competitive pricing vs. Fujairah — speed of supply as differentiator</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Lubricants and marine chemicals supply alongside fuel</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>LNG bunker capability as green shipping mandates accelerate 2028+</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>GT operates or JVs with established bunker trader</span></li>
+</ul>
+<div class="dqs-h bc">Discussion Questions</div>
+<div class="dq"><span class="dn bc">1</span><span>Current bunkering setup at KCT — any capacity or entirely dependent on Fujairah?</span></div>
+<div class="dq"><span class="dn bc">2</span><span>Is there a bunkering operator already interested in a KCT concession?</span></div>
+<div class="dq"><span class="dn bc">3</span><span>What regulatory approvals are needed for licensed bunkering under SPA?</span></div>
+</div></div></div>
+
+<!-- ── TIER 2 ── -->
+<div style="margin-top:32px" class="tier bt bc">TIER 2 — ECOSYSTEM ENABLING — 5 TO 10 YEARS</div>
+
+<div class="lc">
+<h4 class="bc">🏘️ Workforce Housing + Commercial Strip Near KCT</h4>
+<p>JAFZA built accommodation blocks as its workforce grew. Without this, every Grade A park tenant must solve housing themselves — limiting the talent pool vs. Dubai. KCT's workforce has nowhere to live, eat, bank, or receive healthcare nearby.</p>
+<div class="mg" style="margin-top:10px">
+<div class="mc bc"><h4>Staff Accommodation</h4><p>Mid-rise blocks for port, K-Flow, and future free zone employees</p></div>
+<div class="mc bc"><h4>Commercial Strip</h4><p>Supermarket, pharmacy, bank, clinic, restaurants</p></div>
+<div class="mc bc"><h4>Crew Hotels</h4><p>3-star functional for maritime crew + business class for shipping executives</p></div>
+<div class="mc bc"><h4>Schools &amp; Clinics</h4><p>Infrastructure that transforms a port into a community</p></div>
+</div>
+</div>
+
+<div class="lc">
+<h4 class="bc">🌾 Food Security &amp; Agri-Logistics Hub</h4>
+<p>Sharjah's interior — Al Dhaid, Al Batayeh, Mleiha — are established food and agricultural areas. KCT is their sea gateway. There is no integrated agri-logistics connection between Sharjah's food-producing interior and KCT's global shipping. Post-Hormuz crisis, this has a powerful political narrative.</p>
+<div class="mg" style="margin-top:10px">
+<div class="mc bc"><h4>Grain Silos &amp; Commodity Storage</h4><p>Bonded storage at KCT — UAE food security reserve node</p></div>
+<div class="mc bc"><h4>Halal Processing</h4><p>Repackaging room bonded for re-export to Gulf markets</p></div>
+<div class="mc bc"><h4>Refrigerated Corridor</h4><p>Connecting KCT to Al Dhaid inland farms</p></div>
+<div class="mc bc"><h4>Food Security Positioning</h4><p>Sharjah east coast as Northern Emirates food security anchor</p></div>
+</div>
+</div>
+
+<div class="lc">
+<h4 class="bc">✈️ Air Connectivity — Bridging the Missing Mode</h4>
+<p>Every major UAE logistics ecosystem has airport integration. JAFZA has Al Maktoum. SAIF Zone has Sharjah Airport. KEZAD has Abu Dhabi Airport. KCT's nearest airport is 90 minutes away — a structural disadvantage for time-sensitive cargo and executive access.</p>
+<div class="tg" style="margin-top:10px">
+<div class="tc ot bc"><h4>Option A — Fast</h4><p>Helicopter/VTOL pad at KCT for executive transport + urgent small cargo. 20 mins to Sharjah/Dubai.</p></div>
+<div class="tc bt bc"><h4>Option B — Medium</h4><p>Formal air-sea intermodal partnership with Fujairah Airport (30 mins from KCT). Bonded road link, shared logistics.</p></div>
+<div class="tc bc"><h4>Option C — Long Term</h4><p>Dedicated small cargo airstrip in Al Dhaid corridor — express cargo, perishables, time-sensitive goods.</p></div>
+</div>
+</div>
+
+<div class="lc">
+<h4 class="bc">🧠 SME Business Hub &amp; Incubator</h4>
+<p>JAFZA has incubators for Indian and Latin American companies entering Dubai. KCT has no business support infrastructure. Sharjah hosts 40% of UAE's industrial establishments — many are SMEs who need a KCT-connected home.</p>
+<div class="mg" style="margin-top:10px">
+<div class="mc bc"><h4>Flexible Workspace</h4><p>Co-working + small offices within Grade A Park or free zone</p></div>
+<div class="mc bc"><h4>One-Stop Registration</h4><p>Licensing, visa, banking — all in one location</p></div>
+<div class="mc bc"><h4>Sector Incubator</h4><p>Maritime tech, agri-logistics startups, supply chain innovation</p></div>
+<div class="mc bc"><h4>UAE 300bn Alignment</h4><p>Connects to Operation 300bn SME financing + AED 30bn EDB fund</p></div>
+</div>
+</div>
+
+<!-- ── TIER 3 ── -->
+<div style="margin-top:32px" class="tier gt bc">TIER 3 — THE LONG GAME — 10 TO 20 YEARS</div>
+
+<div class="lc gray-l">
+<h4 class="bc">🖥️ Logistics &amp; Maritime Tech District</h4>
+<p>Companies building supply chain technology, port management software, autonomous trucking, drone delivery — co-located with the port that is their live test environment. Maritime innovation hub for green shipping R&amp;D and clean fuel pilots. University of Sharjah east campus focused on logistics and maritime talent pipeline.</p>
+</div>
+
+<div class="lc gray-l">
+<h4 class="bc">🏙️ KFK Economic City — Complete Community</h4>
+<p>JAFZA's ultimate lesson: ports become economic cities. The 20-year vision for KFK is residential + commercial + industrial + port + marine + innovation — a complete self-sustaining east coast economic city anchored by GT's logistics infrastructure. The time to reserve land for this is now, before it is developed for other uses.</p>
+</div>
+
+<div class="lc gray-l">
+<h4 class="bc">🌿 Green Shipping Hub</h4>
+<p>As IMO 2030/2050 mandates bite, vessels will seek green-fuel-capable ports. LNG, green methanol, ammonia bunkering. KCT outside the Strait is ideally placed to be the Gulf of Oman's green shipping hub — attracting vessels specifically routing via KCT for compliant refueling. First-mover advantage window: 2027–2032.</p>
+</div>
+
+<!-- CLOSING BOX -->
+<div class="close-box bc">
+<h4>The Core Argument</h4>
+<p style="font-family:Barlow,sans-serif">KCT has the port. It has the location advantage JAFZA never had — outside the Strait, facing Asia directly, with Etihad Rail confirmed. What it does not yet have is the ecosystem layered around it. The path from world-class terminal to world-class economic zone requires: free zone designation, sector clustering, maritime services, workforce infrastructure, and a self-sustaining community. <strong>How many of these layers can be committed to in a 10-year masterplan?</strong></p>
+</div>
+
+</div>
+
+<!-- ═══ S8 ENERGY & FUEL ═══ -->
+<div class="sec" id="energy">
+<div class="sec-l bc">New Opportunity</div>
+<div class="sec-t bc">Energy &amp; Fuel Services at KCT</div>
+
+<!-- SUB 1 — Strategic Context -->
+<div style="font-weight:700;font-size:12px;color:var(--o);margin-bottom:8px;letter-spacing:1.5px;text-transform:uppercase" class="bc">What Is Happening Right Now</div>
+
+<div class="nb bc">
+<h3>Fujairah Is Under Attack. KCT Is Not.</h3>
+<p style="font-family:Barlow,sans-serif">Iran has struck Fujairah's oil terminals repeatedly throughout March 2026. Force majeure declared. Operations suspended multiple times. The Habshan–Fujairah pipeline — 1.5 million bpd bypassing Hormuz — has been a repeated target. KCT sits 70km away on the same coastline and has not been touched. This is not coincidence. Iran's targeting doctrine is specific: attack what bypasses Hormuz for strategic energy export. A commercial container terminal is not on that list. That distinction is KCT's protection — and the boundary that must not be crossed.</p>
+</div>
+
+<div class="sg3">
+<div class="sg3-item"><div class="st-l">Fujairah Global Bunkering Rank</div><div class="st-v bc">#2</div><div class="st-n">Behind Singapore. 9M cubic metres sold in 2024</div></div>
+<div class="sg3-item"><div class="st-l">Habshan–Fujairah Pipeline</div><div class="st-v bc">1.5M bpd</div><div class="st-n">Repeatedly targeted. UAE's primary Hormuz bypass</div></div>
+<div class="sg3-item"><div class="st-l">KCT Threat Incidents</div><div class="st-v bc">Zero</div><div class="st-n">Not targeted despite identical coastline geography</div></div>
+</div>
+
+<div class="ob">KCT is safe because of what it is, not where it is. That changes the moment its identity shifts toward strategic energy infrastructure.</div>
+
+<!-- SUB 2 — Commercial Opportunity -->
+<div style="font-weight:700;font-size:12px;color:var(--o);margin-bottom:8px;letter-spacing:1.5px;text-transform:uppercase;margin-top:28px" class="bc">The Revenue Gap</div>
+
+<p style="font-size:14px;color:#4a5568;line-height:1.7;margin-bottom:18px">Every vessel calling KCT burns fuel. None of that spend stays at KCT. The commercial case is straightforward — the customers are already here, the demand already exists, and the service is absent. The question is scope and structure.</p>
+
+<div class="tg">
+<div class="tc ot bc"><h4>VLSFO</h4><p>Primary propulsion fuel for the container fleet post-IMO 2020. Fixed-roof storage. $440–$700/mt. The core product for any KCT fuel service — unremarkable infrastructure, standard at every commercial port.</p></div>
+<div class="tc bt bc"><h4>MGO</h4><p>Higher-margin distillate for port manoeuvring and ECA compliance. $700–$800/mt. Smaller volumes, better unit economics. Operationally standard.</p></div>
+<div class="tc bc"><h4>LNG</h4><p>Growing share of the container fleet — CMA CGM, MSC, and others are committed. Requires cryogenic infrastructure entirely separate from VLSFO/MGO. A distinct investment decision requiring actual fleet composition data at KCT before any commitment.</p></div>
+</div>
+
+<!-- SUB 3 — Revenue Models -->
+<div style="font-weight:700;font-size:12px;color:var(--o);margin-bottom:8px;letter-spacing:1.5px;text-transform:uppercase;margin-top:28px" class="bc">How GT Earns Without Becoming an Energy Company</div>
+
+<div class="geo2">
+<div class="pc ot">
+<h4 class="bc">Phase 1: Port Fee Model</h4>
+<p style="font-weight:600;color:var(--n);font-size:12px;margin-bottom:8px">Zero Capex. Immediate Revenue.</p>
+<p>GT grants a licensed bunker trader port access. Trader brings barge and fuel. GT collects a per-tonne port service fee. No capital. No commodity exposure. No operational complexity. Market rate: $8–$15/tonne.</p>
+<span class="vb s-confirmed">Start Here</span>
+</div>
+<div class="pc bt">
+<h4 class="bc">Phase 2: Shore Storage</h4>
+<p style="font-weight:600;color:var(--n);font-size:12px;margin-bottom:8px">Own the Infrastructure. Charge for Access.</p>
+<p>Small fixed-roof shore tanks sized strictly to documented Phase 1 demand. GT charges throughput fee to traders. GT is the landlord — not the trader, not the commodity holder. This is the Vopak model applied at KCT scale.</p>
+<span class="vb s-planned">Phase 1 Data Must Justify This First</span>
+</div>
+</div>
+
+<!-- SUB 4 — Structural Rule -->
+<div class="ob" style="margin-top:24px">GT is the infrastructure owner. The bunker trader is the tenant. GT earns a fixed fee per tonne regardless of oil price. The trader carries commodity price risk, credit risk, and working capital. This structure does not change regardless of which phase or which option is pursued.</div>
+
+<!-- SUB 5 — Geopolitical -->
+<div style="font-weight:700;font-size:12px;color:var(--o);margin-bottom:8px;letter-spacing:1.5px;text-transform:uppercase;margin-top:28px" class="bc">Special Consideration — The Geopolitical Dimension</div>
+
+<p style="font-size:14px;color:#4a5568;line-height:1.7;margin-bottom:16px">Sharjah's political positioning is a genuine strategic asset — Sheikh Sultan's deliberate neutrality, distinct regional relationships, and distance from the Abraham Accords give KCT a threat profile that Dubai and Abu Dhabi cannot claim. This is not a formality. It is an active, maintained position that must inform every decision in this section. It is also not permanent — it is a function of leadership continuity and institutional discipline.</p>
+
+<div class="ob">Infrastructure cannot be disguised. Floating roof tanks, VLCC berths, manifold piping configuration — a trained analyst identifies these on a site visit or from satellite imagery regardless of what any press release says. The physical signature of what is built determines the threat profile. Not the name. Not the license category. The structure itself.</div>
+
+<div class="geo2">
+<div class="geo-card red-l">
+<h4 class="bc">🚨 Raises Alarm</h4>
+<ul>
+<li>Floating roof tanks — petroleum signature, identifiable from satellite</li>
+<li>VLCC-capable berths — strategic crude export capability</li>
+<li>Product tankers calling in bulk on a regular pattern</li>
+<li>Any ADNOC or Abu Dhabi entity involvement</li>
+<li>Any inland pipeline connection</li>
+<li>Storage scale that exceeds container vessel demand math</li>
+<li>Public narrative positioning KCT as Fujairah alternative or energy redundancy node</li>
+<li>US or Israeli strategic capital in any KCT energy facility</li>
+<li>Post-succession political realignment toward Abu Dhabi</li>
+</ul>
+</div>
+<div class="geo-card green-l">
+<h4 class="bc">✅ Does Not Raise Alarm</h4>
+<ul>
+<li>Fixed-roof tanks for VLSFO/MGO serving visiting container vessels</li>
+<li>Bunker barge alongside a container ship during normal cargo operations</li>
+<li>Depot scale proportional to documented vessel call demand</li>
+<li>Private international operator — no state or strategic branding</li>
+<li>No public energy narrative</li>
+<li>Investment structured to recoup before political conditions could shift</li>
+<li>Infrastructure indistinguishable from standard commercial port operations worldwide</li>
+</ul>
+</div>
+</div>
+
+<!-- SUB 6 — Strategic Intersection -->
+<div style="font-weight:700;font-size:12px;color:var(--o);margin-bottom:8px;letter-spacing:1.5px;text-transform:uppercase;margin-top:28px" class="bc">The Core Question — How Far Does GT Go?</div>
+
+<p style="font-size:14px;color:#4a5568;line-height:1.7;margin-bottom:18px">The conflict has opened a window. Fujairah is disrupted, vessels need alternatives, and KCT is operational. The question is whether GT uses this window opportunistically within a defined boundary — or pursues a larger energy ambition that changes what KCT is. Three positions.</p>
+
+<div class="pos-grid">
+<div class="pos-card g-top">
+<h4 class="bc">Position A: Port Service Only</h4>
+<p style="font-weight:600;color:var(--n);font-size:11px;margin-bottom:6px">Contained. Executable. Safe.</p>
+<p>Fuel as a commercial port amenity for visiting container vessels. Third-party operator. Fixed-roof tanks. No public narrative. Fast payback. No long-term energy optionality — but no long-term energy risk either.</p>
+<div class="pos-tag bc">Low Risk / Limited Ceiling</div>
+</div>
+<div class="pos-card o-top">
+<h4 class="bc">Position B: Disciplined Optionality</h4>
+<p style="font-weight:600;color:var(--n);font-size:11px;margin-bottom:6px">Start Small. Reserve the Future.</p>
+<p>Begin with Phase 1 port service. Reserve substantially more land than Phase 1 requires. Design Phase 1 infrastructure with engineering specifications compatible with future expansion. Recoup Phase 1 before any Phase 2 commitment. The long-term optionality lives in engineering drawings and land reservation — never in external communications.</p>
+<div class="pos-tag bc" style="color:var(--o)">★ Recommended Position</div>
+</div>
+<div class="pos-card r-top">
+<h4 class="bc">Position C: Energy Terminal Ambition</h4>
+<p style="font-weight:600;color:var(--n);font-size:11px;margin-bottom:6px">High Ceiling. Irreversible Risk.</p>
+<p>Scale toward a genuine east coast energy infrastructure play. Attracts oil traders, product tankers, scaled storage. Strong commercial ceiling — but visible, strategically legible, dependent on Sharjah's neutrality holding for 20+ years, and requires capabilities GT does not have. Once KCT is on an IRGC watchlist it is currently not on, it cannot be removed.</p>
+<div class="pos-tag bc">High Ceiling / Existential if Wrong</div>
+</div>
+</div>
+
+<div class="ob">Position B is the only one that is simultaneously executable, commercially sound, and reversible. Position A leaves value on the table. Position C is a 20-year bet on political stability, leadership continuity, and GT's capability transformation — simultaneously. The downside of getting Position C wrong is not a bad investment. It is KCT.</div>
+
+<!-- SUB 7 — All Options Table -->
+<div style="font-weight:700;font-size:16px;color:var(--n);margin:28px 0 8px" class="bc">All Options — Full Evaluation</div>
+<p style="font-size:13px;color:#4a5568;line-height:1.6;margin-bottom:14px">Nine options across the full spectrum from zero-capex port service to sovereign underground reserve. Ranked by overall viability given GT's mandate, current capability, commercial requirements, and geopolitical constraints.</p>
+
+<div style="overflow-x:auto;margin-bottom:24px">
+<table class="dt" style="min-width:1100px">
+<thead><tr><th>#</th><th>Option</th><th>Description</th><th>Capex Scale</th><th>Revenue Potential</th><th>Margin Profile</th><th>Business Risk</th><th>Geopolitical Risk</th><th>GT Capability Today</th><th>Payback Horizon</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td><strong>1</strong></td><td><strong>Bunker Trader Agreement</strong></td><td>Licensed 3rd-party trader brings barge and fuel. GT collects port access fee per tonne. Zero capital. Zero commodity exposure.</td><td>None</td><td>Immediate modest</td><td>Near-pure margin</td><td>Near zero</td><td>None</td><td>Ready now</td><td>Immediate</td><td><span class="vb s-confirmed">DO NOW</span></td></tr>
+<tr><td><strong>2</strong></td><td><strong>Shore Storage VLSFO/MGO</strong></td><td>Fixed-roof tanks owned by GT. Throughput fee charged to traders. Sized strictly to Phase 1 demand. GT never holds the commodity.</td><td>Moderate</td><td>Steady mid-scale</td><td>Strong</td><td>Low if correctly sized</td><td>Negligible</td><td>Manageable</td><td>Short to medium</td><td><span class="vb s-planned">Phase 2 — data first</span></td></tr>
+<tr><td><strong>3</strong></td><td><strong>LNG Truck-to-Ship</strong></td><td>ISO tank containers on quayside. No fixed infrastructure. Serves LNG-capable vessels during port call. Fully removable.</td><td>Minimal</td><td>Demand-dependent</td><td>Solid if volume exists</td><td>Moderate — demand unconfirmed at KCT</td><td>None</td><td>Manageable</td><td>Medium if demand there</td><td><span class="vb s-discuss">Revisit 2028–2030</span></td></tr>
+<tr><td><strong>4</strong></td><td><strong>Chemical &amp; Base Oil Terminal</strong></td><td>Liquid bulk storage for industrial chemicals, lubricants, base oils. Serves industrial park tenants and vessels. Infrastructure compatible with petroleum but categorically different product class.</td><td>Moderate</td><td>Steady mid-scale</td><td>Solid</td><td>Moderate — contingent on industrial park</td><td>Negligible</td><td>Requires new capability</td><td>Medium</td><td><span class="vb s-discuss">Valid if industrial park fills</span></td></tr>
+<tr><td><strong>5</strong></td><td><strong>Green Methanol / Ammonia Bunkering</strong></td><td>Supply IMO 2030-compliant alternative fuels to next-generation vessels. First-mover position in an infrastructure gap that barely exists yet.</td><td>Moderate to significant</td><td>High if demand materialises</td><td>High ceiling long-term</td><td>High — very early market</td><td>None</td><td>Significant gap</td><td>Long</td><td><span class="vb s-discuss">Watch IMO 2030 fleet mandates</span></td></tr>
+<tr><td><strong>6</strong></td><td><strong>Full LNG Terminal</strong></td><td>Pipeline-fed from Sharjah gas reserves. Full liquefaction, storage, and bunkering value chain. Entirely new business.</td><td>Very high</td><td>Very high ceiling</td><td>Very high if demand realised</td><td>Very high — long ramp-up, regulatory complexity, upstream dependency</td><td>Low — visible infrastructure opens an energy surveillance file</td><td>Outside mandate</td><td>Very long</td><td><span class="vb s-gap">Wrong decade</span></td></tr>
+<tr><td><strong>7</strong></td><td><strong>Refined Products Terminal</strong></td><td>Scaled storage attracting oil traders beyond vessel bunkering. Moves GT from port operator into terminal operator model with commodity exposure.</td><td>Significant</td><td>High ceiling</td><td>Strong if executed</td><td>High — requires trading relationships and working capital</td><td>Elevated — large visible tank farm changes KCT's observable profile</td><td>Significant gap</td><td>Long</td><td><span class="vb s-gap">Post-Phase 2 only with years of data</span></td></tr>
+<tr><td><strong>8</strong></td><td><strong>Crude Oil Terminal</strong></td><td>Full Fujairah-equivalent. VLCC berths, floating roof tanks, crude storage and export.</td><td>Substantial sovereign-scale</td><td>Sovereign-scale</td><td>Highest ceiling</td><td>Very high — no pipeline, no supply, no relationships</td><td style="color:var(--gap);font-weight:600">Red line — identical infrastructure signature to what Iran targets at Fujairah</td><td>Outside mandate</td><td>Not commercial</td><td><span class="vb s-gap">Never</span></td></tr>
+<tr><td><strong>9</strong></td><td><strong>Underground Strategic Reserve</strong></td><td>Caverns in Hajar Mountains. Invisible from surface. Strategic storage for national resilience. Sovereign asset, not a commercial project.</td><td>Substantial sovereign-scale</td><td>Sovereign-scale</td><td>Not applicable</td><td>Not applicable — requires government mandate</td><td>Low — physically invisible but analytically inferable</td><td>Outside mandate entirely</td><td>Not commercial</td><td><span class="vb s-gap">Not GT's play</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- SUB 8 — Non-Negotiable Rules -->
+<div style="font-weight:700;font-size:16px;color:var(--n);margin:28px 0 10px" class="bc">The Constraints That Apply Regardless of Scenario</div>
+
+<ul class="rules">
+<li><span class="rules-ck">✓</span><span>GT is the infrastructure owner and landlord — never the commodity trader or holder</span></li>
+<li><span class="rules-ck">✓</span><span>No US, Israeli, or Western strategic capital in any KCT energy facility</span></li>
+<li><span class="rules-ck">✓</span><span>No ADNOC or Abu Dhabi entity involvement — Sharjah's neutrality is a commercial asset, not a formality</span></li>
+<li><span class="rules-ck">✓</span><span>No public narrative positioning KCT as an energy play, Fujairah alternative, or strategic redundancy node</span></li>
+<li><span class="rules-ck">✓</span><span>All infrastructure sized to documented demand — never ahead of data</span></li>
+<li><span class="rules-ck">✓</span><span>Each phase must recoup investment within a timeframe that does not assume political stability for decades</span></li>
+<li><span class="rules-ck">✓</span><span>Fixed-roof tanks only through Phase 2 — floating roof tanks belong to a different geopolitical era</span></li>
+<li><span class="rules-ck">✓</span><span>Long-term optionality exists only in engineering specifications and land reservation — never in any external document</span></li>
+<li><span class="rules-ck">✓</span><span>If any step requires compromising Sharjah's regional neutrality, that step does not proceed regardless of upside</span></li>
+</ul>
+
+<!-- CLOSING -->
+<div class="ob" style="margin-top:24px">The immediate action requires no capital and no board approval: pull the vessel call data internally and approach two or three licensed bunker traders with a commercial access agreement. The data that emerges from those conversations — not this document — is what determines the next decision.</div>
+
+</div>
+
+</main>
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sb">
+
+<!-- Status Legend -->
+<div class="sc"><div class="sh bc">Status Legend</div><div class="sv">
+<div class="li"><div class="ld" style="background:var(--ok)"></div><span>Confirmed / Operational</span></div>
+<div class="li"><div class="ld" style="background:var(--pl)"></div><span>Planned / In Development</span></div>
+<div class="li"><div class="ld" style="background:var(--gap)"></div><span>Critical Gap</span></div>
+<div class="li"><div class="ld" style="background:var(--disc)"></div><span>For Discussion</span></div>
+</div></div>
+
+<!-- Market Context -->
+<div class="sc"><div class="sh oh bc">Market Context</div><div class="sv">
+<div class="st"><div class="st-l">UAE Logistics Market (2025)</div><div class="st-v bc">$41bn</div><div class="st-n">8.2% CAGR through 2030</div></div>
+<div class="st"><div class="st-l">UAE Industrial GDP Target</div><div class="st-v bc">AED 300bn</div><div class="st-n">Operation 300bn — by 2031</div></div>
+<div class="st"><div class="st-l">Sharjah Share of UAE Industry</div><div class="st-v bc">40%</div><div class="st-n">of total UAE industrial establishments</div></div>
+<div class="st"><div class="st-l">Sharjah FDI Growth (H1 2025)</div><div class="st-v bc">+361%</div><div class="st-n">vs. same period 2024</div></div>
+<div class="st"><div class="st-l">KFK Business Licence Growth</div><div class="st-v bc">+126%</div><div class="st-n">2025 — highest rate in Sharjah</div></div>
+<div class="st"><div class="st-l">Etihad Rail Freight Target</div><div class="st-v bc">60M t</div><div class="st-n">Tonnes/year by 2030</div></div>
+<div class="st"><div class="st-l">UAE Grade A Logistics Yields</div><div class="st-v bc">7–8%</div><div class="st-n">Prime and Grade A assets (JLL 2026)</div></div>
+<div class="st"><div class="st-l">UAE E-Commerce Market</div><div class="st-v bc">$9.2bn</div><div class="st-n">Projected by 2026</div></div>
+</div></div>
+
+<!-- Ecosystem Readiness -->
+<div class="sc"><div class="sh bc">Ecosystem Readiness</div><div class="sv" id="bars">
+<div class="pi"><div class="pl"><span>Port Infrastructure</span><span>95%</span></div><div class="pb"><div class="pf" data-w="95" style="background:var(--n)"></div></div></div>
+<div class="pi"><div class="pl"><span>Bonded Logistics</span><span>70%</span></div><div class="pb"><div class="pf" data-w="70" style="background:var(--n)"></div></div></div>
+<div class="pi"><div class="pl"><span>Rail Integration</span><span>40%</span></div><div class="pb"><div class="pf" data-w="40" style="background:var(--o)"></div></div></div>
+<div class="pi"><div class="pl"><span>Grade A Warehousing</span><span>20%</span></div><div class="pb"><div class="pf" data-w="20" style="background:var(--o)"></div></div></div>
+<div class="pi"><div class="pl"><span>Digital Platform</span><span>5%</span></div><div class="pb"><div class="pf" data-w="5" style="background:var(--gap)"></div></div></div>
+<div class="pi"><div class="pl"><span>Commercial Products</span><span>15%</span></div><div class="pb"><div class="pf" data-w="15" style="background:var(--gap)"></div></div></div>
+</div></div>
+
+<!-- Risks -->
+<div class="sc"><div class="sh bc">Risks to Flag</div><div class="sv">
+<div class="rk"><div class="rd" style="background:var(--gap)"></div><span>⚠ No anchor tenant = park financing risk. LOIs must precede construction.</span></div>
+<div class="rk"><div class="rd" style="background:var(--gap)"></div><span>⚠ Bonded rail designation not automatic — must be formally applied for through customs authorities.</span></div>
+<div class="rk"><div class="rd" style="background:var(--disc)"></div><span>⚠ Without a digital platform, the corridor is invisible to customers — no self-serve, no stickiness.</span></div>
+<div class="rk"><div class="rd" style="background:var(--disc)"></div><span>⚠ Corridor product has no commercial owner today — must assign responsibility before launch.</span></div>
+<div class="rk"><div class="rd" style="background:var(--g)"></div><span>⚠ Fujairah's bonded rail corridor (Khalifa–Fujairah) is live. Delay increases competitive gap on east coast.</span></div>
+</div></div>
+
+<!-- Session Outputs -->
+<div class="sc"><div class="sh bc">Session Outputs Needed</div><div class="sv">
+<ul class="cl">
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Strategic priority ranking of the 6 gaps</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Decision on Grade A Park ownership structure</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Anchor tenant shortlist (top 3)</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Owner assigned to corridor product launch</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Digital platform: build vs. buy decision</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Next geographic node — which of 3 options</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Bonded rail designation — action item + owner</span></li>
+<li onclick="tc(this,event)"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Phase 1 roadmap — 3 items to start immediately</span></li>
+</ul>
+</div></div>
+
+</aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="ft bc">Gulftainer — CEO Office &nbsp;|&nbsp; Logistics Ecosystem Strategy Brief &nbsp;|&nbsp; Internal Working Document — April 2026 &nbsp;|&nbsp; Not for external distribution</footer>
+
+<script>
+function tg(el){el.closest('.cd').classList.toggle('op')}
+function tc(li,e){e.stopPropagation();li.classList.toggle('x')}
+
+// Progress bar animation
+setTimeout(()=>{document.querySelectorAll('.pf').forEach(b=>{b.style.width=b.dataset.w+'%'})},300);
+
+// Nav scroll spy
+const secs=document.querySelectorAll('.sec');
+const links=document.querySelectorAll('.nv a');
+function spy(){
+  let cur='';
+  secs.forEach(s=>{if(s.getBoundingClientRect().top<160)cur=s.id});
+  links.forEach(a=>{a.classList.toggle('ac',a.getAttribute('href')==='#'+cur)});
+}
+window.addEventListener('scroll',spy,{passive:true});
+spy();
+</script>
+</body>
+</html>
